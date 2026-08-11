@@ -1,0 +1,13 @@
+# Ignore everything except lib, test, pubspec.yaml, and ARCHITECTURAL_REPORT.md
+/android/
+/ios/
+/linux/
+/macos/
+/windows/
+/web/
+/build/
+/.dart_tool/
+/.idea/
+/*.iml
+/.metadata
+/pubspec.lock
