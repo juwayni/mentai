@@ -1,43 +1,47 @@
 enum MentatAttachmentType {
-  sleep,
   energy,
-  mood,
+  mentatNoticed,
   journal,
-  copingCard,
+  sleep,
   stress,
-  assessment,
-  meditation,
-  emotion,
+  copingCard,
+  topic,
+  sleepTracker,
+  diaryRecord,
 }
 
 class MentatAttachment {
   final MentatAttachmentType type;
-  final String? text;
+  final String? title;
+  final String? body;
   final String? payload;
 
-  const MentatAttachment({
+  MentatAttachment({
     required this.type,
-    this.text,
+    this.title,
+    this.body,
     this.payload,
   });
 
   Map<String, dynamic> toJson() {
     return {
       'type': type.name,
-      'text': text,
-      'payload': payload,
+      if (title != null) 'title': title,
+      if (body != null) 'body': body,
+      if (payload != null) 'payload': payload,
     };
   }
 
   factory MentatAttachment.fromJson(Map<String, dynamic> json) {
-    final typeStr = json['type'] as String;
+    final typeName = json['type'] as String? ?? 'journal';
     final type = MentatAttachmentType.values.firstWhere(
-      (e) => e.name == typeStr,
+      (e) => e.name == typeName,
       orElse: () => MentatAttachmentType.journal,
     );
     return MentatAttachment(
       type: type,
-      text: json['text'] as String?,
+      title: json['title'] as String?,
+      body: json['body'] as String?,
       payload: json['payload'] as String?,
     );
   }
