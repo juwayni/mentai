@@ -1,0 +1,45 @@
+name: mentat_ai
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: any
+  hive: any
+  hive_flutter: any
+  sqflite: any
+  path: any
+  firebase_core: any
+  firebase_analytics: any
+  firebase_crashlytics: any
+  firebase_remote_config: any
+  firebase_app_check: any
+  onesignal_flutter: any
+  jiffy: any
+  intl: any
+  get: any
+  flutter_riverpod: any
+  app_tracking_transparency: any
+  facebook_app_events: any
+  wakelock_plus: any
+  package_info_plus: any
+  flutter_svg: any
+  flutter_markdown: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

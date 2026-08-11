@@ -1,0 +1,13 @@
+/out/android
+/out/ios
+/out/linux
+/out/macos
+/out/windows
+/out/web
+/out/.dart_tool
+/out/.idea
+/out/.metadata
+/out/.flutter-plugins-dependencies
+/out/pubspec.lock
+/out/mentat_ai.iml
+/parse_banner.py
