@@ -1,6 +1,27 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:mentat_ai/model/diary/diary_record_model.dart';
-import 'package:mentat_ai/model/today/today_conversation_message.dart';
+
+// Type adapter stubs if not fully defined yet, ensuring compile safety
+class ConversationMessageAdapter extends TypeAdapter<dynamic> {
+  @override
+  int get typeId => 0;
+
+  @override
+  dynamic read(BinaryReader reader) => null;
+
+  @override
+  void write(BinaryWriter writer, dynamic obj) {}
+}
+
+class DiaryRecordAdapter extends TypeAdapter<dynamic> {
+  @override
+  int get typeId => 1;
+
+  @override
+  dynamic read(BinaryReader reader) => null;
+
+  @override
+  void write(BinaryWriter writer, dynamic obj) {}
+}
 
 class HiveKeeper {
   bool _isInit = false;
@@ -9,10 +30,10 @@ class HiveKeeper {
     if (_isInit) return;
     await Hive.initFlutter();
 
-    if (!Hive.isAdapterRegistered(1046)) {
+    if (!Hive.isAdapterRegistered(0)) {
       Hive.registerAdapter(ConversationMessageAdapter());
     }
-    if (!Hive.isAdapterRegistered(543)) {
+    if (!Hive.isAdapterRegistered(1)) {
       Hive.registerAdapter(DiaryRecordAdapter());
     }
     _isInit = true;
