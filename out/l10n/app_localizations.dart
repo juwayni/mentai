@@ -1,7 +1,17 @@
-import 'package:mentat_ai/l10n/app_localizations.dart';
+import 'package:flutter/widgets.dart';
+
+import 'package:flutter/foundation.dart';
+import 'app_localizations_en.dart';
 
 class AppLocalizations {
-  AppLocalizationsEn(super.locale);
+  final Locale locale;
+  AppLocalizations(this.locale);
+
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
+  }
+
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   String get groundingTechniquesReflectionPrompt => "What grounding technique works best for you?";
 
@@ -2992,4 +3002,23 @@ class AppLocalizations {
   String get toady => "Today";
 
   String get save => "Save";
+}
+
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) {
+    return [
+      'ar', 'da', 'de', 'en', 'es', 'fr', 'he', 'it', 'ja', 'ko', 'nb', 'no', 'pl', 'pt', 'ru', 'sv', 'uk'
+    ].contains(locale.languageCode);
+  }
+
+  @override
+  Future<AppLocalizations> load(Locale locale) {
+    return SynchronousFuture<AppLocalizations>(AppLocalizationsEn(locale.languageCode));
+  }
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
 }

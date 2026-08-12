@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:intl/intl.dart';
 import 'package:mentat_ai/data/hive/hive_keeper.dart';
 import 'package:mentat_ai/data/sqflite/database_helper.dart';
 import 'package:mentat_ai/data/sqflite/database_messages_helper.dart';
@@ -12,21 +11,16 @@ final dbHelper = DatabaseHelper();
 final dbMessagesHelper = DatabaseMessagesHelper();
 
 class DatabaseFixes {
-  late final Box _userStatusBox;
-  late final Box _todayBox;
-
-  DatabaseFixes() {
-    _userStatusBox = HiveKeeper().getUserStatusBox();
-    _todayBox = HiveKeeper().getTodayBox();
-  }
+  DatabaseFixes();
 
   Future<void> migrateMessages() async {
-    final box = HiveKeeper().getTodayBox();
+    final box = await HiveKeeper().getTodayBox();
     if (box.containsKey("databse_messages_migrate")) {
       return;
     }
 
-    final isAuth = await AuthUseCase(_userStatusBox).isUserAuth();
+    final userStatusBox = await HiveKeeper().getUserStatusBox();
+    final isAuth = await AuthUseCase(userStatusBox).isUserAuth();
     if (!isAuth) {
       await box.put("databse_messages_migrate", true);
       return;
@@ -57,7 +51,7 @@ class DatabaseFixes {
   }
 
   Future<void> fixDatabaseTimestamps() async {
-    final box = HiveKeeper().getTodayBox();
+    final box = await HiveKeeper().getTodayBox();
     if (box.containsKey("databse_fix_timestamps")) {
       return;
     }

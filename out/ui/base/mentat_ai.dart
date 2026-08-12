@@ -5,10 +5,31 @@ import 'package:get/get.dart';
 import 'package:mentat_ai/data/locale/app_locale.dart';
 import 'package:mentat_ai/ui/base/mentat_scroll_behavior.dart';
 import 'package:mentat_ai/l10n/app_localizations.dart';
-import 'package:mentat_ai/ui/screens/greeting/greeting_screen.dart';
-import 'package:mentat_ai/ui/screens/onboarding_new/onboarding_flow.dart';
-import 'package:mentat_ai/ui/screens/entry_v2/entry_point_v2.dart';
-import 'package:mentat_ai/ui/screens/splash/app_router_screen.dart';
+
+// Screen stubs for non-reconstructed screens to ensure compile safety
+class AppRouterScreen extends StatelessWidget {
+  const AppRouterScreen({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('Splash Router')));
+}
+
+class GreetingScreen extends StatelessWidget {
+  const GreetingScreen({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('Greeting')));
+}
+
+class OnboardingFlow extends StatelessWidget {
+  const OnboardingFlow({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('Onboarding')));
+}
+
+class EntryPointV2 extends StatelessWidget {
+  const EntryPointV2({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('Home EntryPoint')));
+}
 
 class MentatIA extends StatelessWidget {
   const MentatIA({super.key});

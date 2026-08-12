@@ -10,7 +10,6 @@ import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:facebook_app_events/facebook_app_events.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:mcp_toolkit/src/toolkits/flutter_mcp_toolkit.dart';
 
 import 'package:mentat_ai/data/sqflite/database_helper.dart';
 import 'package:mentat_ai/data/sqflite/database_messages_helper.dart';
@@ -32,9 +31,6 @@ FacebookAppEvents? facebookAppEvents;
 void main() async {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
-
-    // Initialize MCP Toolkit
-    await MCPToolkitBinding.instance.initializeFlutterToolkit();
 
     // Set System UI overlay style
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle());
