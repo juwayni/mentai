@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+abstract class MentatColors {
+  static const Color neutralWhite = Color(0xFFFFFFFF);
+  static const Color greetingTextNavy = Color(0xFF0D1B2A);
+  static const Color mainPurple = Color(0xFF7B1FA2);
+  static const Color greetingButtonBlue = Color(0xFF2196F3);
+  static const Color greetingNavy = Color(0xFF0F1B29);
+  static const Color onboardingActionButtonBg = Color(0xFF2196F3);
+  static const Color mainWhite = Color(0xFFFFFFFF);
+  static const Color textColorPurple = Color(0xFF4A148C);
+  static const Color emotionPositive = Color(0xFF4CAF50);
+  static const Color textColorPrimary = Color(0xFF212121);
+  static const Color textHintColor = Color(0xFF9E9E9E);
+  static const Color green = Color(0xFF4CAF50);
+  static const Color orange = Color(0xFFFF9800);
+  static const Color red = Color(0xFFF44336);
+  static const Color violet = Color(0xFF673AB7);
+  static const Color violet200 = Color(0xFFB39DDB);
+  static const Color triggerRelationship = Color(0xFFE91E63);
+  static const Color triggerWork = Color(0xFF3F51B5);
+  static const Color triggerFamily = Color(0xFFFF9800);
+  static const Color triggerFinance = Color(0xFF4CAF50);
+  static const Color triggerHealth = Color(0xFF00BCD4);
+  static const Color triggerFood = Color(0xFFFFC107);
+  static const Color triggerPet = Color(0xFF8BC34A);
+  static const Color triggerNature = Color(0xFF009688);
+  static const Color triggerArt = Color(0xFF9C27B0);
+  static const Color triggerExercise = Color(0xFFCDDC39);
+  static const Color triggerMeditation = Color(0xFF607D8B);
+  static const Color triggerLearning = Color(0xFF795548);
+  static const Color triggerCommunity = Color(0xFF9E9E9E);
+  static const Color triggerHobby = Color(0xFFFF5722);
+  static const Color triggerFriendship = Color(0xFFE91E63);
+  static const Color sleepColor1 = Color(0xFF311B92);
+  static const Color sleepColor2 = Color(0xFF4527A0);
+  static const Color sleepColor3 = Color(0xFF5E35B1);
+  static const Color sleepColor4 = Color(0xFF7E57C2);
+  static const Color sleepColor5 = Color(0xFFB39DDB);
+  static const Color moodColor1 = Color(0xFFE91E63);
+  static const Color moodColor2 = Color(0xFFFF4081);
+  static const Color moodColor3 = Color(0xFFFF80AB);
+  static const Color moodColor4 = Color(0xFFFFB74D);
+  static const Color moodColor5 = Color(0xFFFFF176);
+  static const Color emotionNeutral = Color(0xFFFFEB3B);
+  static const Color emotionNegative = Color(0xFFE53935);
+}
